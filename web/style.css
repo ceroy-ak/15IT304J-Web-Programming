@@ -1,0 +1,43 @@
+body{ 
+    font-family: sans-serif;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.62),
+     rgba(0, 0, 0, 0.692)),url(bg.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    position: relative;
+}
+
+.form-box{
+    width: max-content;
+    border-radius: 5%;
+    height: max-content;
+    text-align: center;
+    margin: 15% auto;
+    background-color:rgba(235, 226, 226, 0.795);
+    
+}
+
+.form-main{
+    position: relative;
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.form-main input{
+    margin: 5%;
+    text-align: center;
+    height: 20px;
+}
+
+.form-main button{
+    margin: 5%;
+    height: auto;
+    width: auto;
+}
+
+.form-main h1 {
+    padding-top: 10%;
+    color: rgb(44, 44, 40);
+    font-size: x-large;
+}

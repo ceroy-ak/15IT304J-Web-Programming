@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:15459/JobTaskerWebService?WSDL" uri="wsdl/localhost_15459/JobTaskerWebService.wsdl"/>
+    <system systemId="http://localhost:15459/JobTaskerWebService?xsd=1" uri="wsdl/localhost_15459/JobTaskerWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:15459/Quotes?wsdl" uri="wsdl/localhost_15459/Quotes.wsdl"/>
+    <system systemId="http://localhost:15459/Quotes?xsd=1" uri="wsdl/localhost_15459/Quotes.xsd_1.xsd"/>
+    <system systemId="http://localhost:15459/Quotes/NewWebService?WSDL" uri="wsdl/localhost_15459/Quotes/NewWebService.wsdl"/>
+    <system systemId="http://localhost:15459/Quotes/NewWebService?xsd=1" uri="wsdl/localhost_15459/Quotes/NewWebService.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+        <title>Registration</title>
+
+        <style>
+            body {
+                background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.692)), url('bg.jpg');
+                background-size: cover;
+            }
+            .hero {
+                width: 1000px;
+                height: 500px;
+                vertical-align: middle;
+                margin: 6% auto;
+                background-color: rgba(180, 171, 171, 0.925);
+                border-bottom-left-radius: 15%;
+                border-top-right-radius: 15%;
+                border-style: outset;
+                border-color: white;
+                border-width: 5px;
+            }
+
+            fieldset {
+                width: max-content;
+                height: min-content;
+                margin-left: 50px;
+                margin-top: 50px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <form id="main" action="registration" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Details</legend>
+                        <br>
+                        <br>
+                        <label for="name">Name:
+                        </label>
+                        <input type="text" name="name" id="name" placeholder="Enter the name"/>
+                        <br>
+                        <br>
+                        <label for="email">Email ID:
+                        </label>
+                        <input type="email" name="email" id="email" placeholder="Enter the email Id"/>
+                        <br>
+                        <br>
+                        <label for="pass">Password:
+                        </label>
+                        <input type="password" name="Password" id="pass" placeholder="Enter the Password"/>
+                        <br>
+                        <br>
+                        <label for="pass">Re-enter Password:
+                        </label>
+                        <input type="password" name="Password" id="pass" placeholder="Enter the Password again"/>
+                        <br>
+                        <br>
+                        <label for="linkedIn">LinkedIn:
+                        </label>
+                        <input type="url" name="linkedIn" id="linkedIn" placeholder="LinkedIn URL"/>
+                        <br>
+                        <br>
+                        <label for="dob">Date of Birth:
+                        </label>
+                        <input type="date" name="dob" id="dob" placeholder="Enter the Date of Birth"/>
+                        <br>
+                        <br>
+                        <label for="photo">Profile Photo:
+                        </label>
+                        <input type="file" id="photo" name="photo" accept="image/*"/>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Other Details</legend>
+                        <br>
+                        <br>
+                        <label for="add">Address:
+                        </label>
+                        <textarea name="add" id="add" cols="20" rows="2" placeholder="Enter Address"></textarea>
+                        <br>
+                        <br>
+                        <label for="pincode">Pincode:
+                        </label>
+                        <input type="number" name="pincode" id="pincode" placeholder="Enter the pincode"/>
+                        <br>
+                        <br>
+                        <label for="mob">Mobile Number:
+                        </label>
+                        <input type="tel" name="mob" id="mob" placeholder="Enter the Mobile Number"/>
+                        <br>
+                        <br>
+                        <label for="slide">Rate your Technical Skills:
+                        </label>
+                        <input type="range" name="technical" min="1" max="100" value="50" class="slider" id="slide"/>
+                        <br>
+                        <br>
+                        <label for="color">Fav Color:
+                        </label>
+                        <input type="color" name="color"/>
+                        <br>
+                        <br>
+                        <label>Please select your gender:
+                        </label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                        <br>
+                        <br>
+                        <label>Online Platforms:
+                        </label>
+                        <input type="checkbox" id="hackerrank" name="platform" value="HackerRank">
+                        <label for="hackerrank">
+                            HackerRank</label>
+                        <input type="checkbox" id="codechef" name="platform" value="CodeChef">
+                        <label for="codechef">
+                            CodeChef</label>
+                        <input type="checkbox" id="leetcode" name="platform" value="LeetCode">
+                        <label for="leetcode">
+                            LeetCode</label>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+            <div style="margin-top: 44%; margin-left: 40%;">
+                <button form="main" type="submit" style="font-size: 15px; border-radius: 15px 50px; font-weight: 400;">Submit</button>
+                <button form="main" type="reset" style="margin-left: 20px; font-size: 15px; border-radius: 15px 50px; font-weight: 400;">Reset</button>
+            </div>
+
+        </div>
+        <script>
+            function validate() {
+                non_valid = [];
+
+                // Email
+                var email = document.getElementById('email').value;
+                var pattern = new RegExp("^([a-zA-Z0-9\.-])+@([a-zA-Z0-9-])+(\.{1})([a-zA-Z]{2,8})(\.)?([a-zA-Z]{2,8})?$", "g");
+                if (! pattern.test(email)) {
+                    non_valid.push('Invalid Email');
+                }
+
+                // Password
+                var password = document.getElementById('pass').value;
+                pattern = new RegExp("[a-zA-Z0-9]{8,15}","g");
+                if (! pattern.test(password)) {
+                    non_valid.push('Password should 8-15 characters and should not contain special charcters');
+                }
+                
+                /*
+                // PhoneNumber
+                var phone = document.getElementById('mob').value;
+                pattern = new RegExp("^[\d]{10,15}$","gi")
+                if (! pattern.test(phone)) {
+                    non_valid.push('Phone number should contain only digits and should be between 10 to 15 length')
+                }*/
+
+                // LinkedIn
+                var linkedIn = document.getElementById('linkedIn').value;
+                pattern = new RegExp("www.linkedin.com","gi");
+                if (! pattern.test(linkedIn)) {
+                    non_valid.push('Invalid LinkedIn URL');
+                }
+
+                //Whole Validation
+                if (non_valid.length > 0) {
+                    alert(non_valid);
+                    non_valid = [];
+                    return false;
+                } else 
+                    return true;
+            }
+        </script>
+
+    </body>
+</html>
